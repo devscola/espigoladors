@@ -4,7 +4,7 @@ class Product
   field :food_type
   field :quantity
   field :expiration
-  field :refrigeration, type: Boolean, :default => False
+  #field :refrigeration, type: Boolean, :default => False
 
   belongs_to :chance
 end
