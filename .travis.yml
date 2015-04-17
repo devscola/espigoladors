@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+- 2.1.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: jCEwM4bc1S/UFovyk+HWEc60iPsWr8gksWhduB3M6GsnFsk5Eyi2S8VgGYXLD7w7MxQNTOdqMH5croWEFY2QfyxuXAYcTRAViMzAYsEP3dhpcMTjPxXXWVOZqGz4YlrzTmMEP/tDO9FPrAmPHws2075EtGzK5sfr4TW8JwKzHy0=
+  app: espigoladors
+  on:
+    repo: devscola/espigoladors
