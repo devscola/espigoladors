@@ -1,6 +1,6 @@
 
 <div class="large-10 push-2 columns">
-<%= form_for @receiver, remote: true, html: { id: "producer-form" } do |f| %>
+<%= form_for @receiver, html: { id: "producer-form" } do |f| %>
     <%= f.label :food_type %>
     <%= f.text_field :food_type, placeholder: "Enter the kind of food" %>
     <%= f.label :quantity %>

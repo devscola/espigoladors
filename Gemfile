@@ -12,6 +12,11 @@ gem 'bson_ext'
 gem 'mongoid', '>= 2.0.0.beta.19'
 gem 'rspec-rails', '>= 2.0.1', group: [:development, :test]
 gem 'guard-rails'
+gem 'puma'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'byebug'

@@ -1,0 +1,14 @@
+<h1>Display Excedents</h1>
+
+<div>
+  <% @producers.each do |producer| %>
+    <p>Food type: <%= producer.food_type %></p>
+    <p>Quantity: <%= producer.quantity %></p>
+    <p>Expiration: <%= producer.expiration %></p>
+    <p>Address: <%= producer.address %></p>
+    <p>Schedule: <%= producer.schedule %></p>
+
+    <p><%= link_to "See spot", producer_path(producer.id) %> - <%= link_to "Edit spot", edit_producer_path(producer.id) %> - <%= link_to "Delete excedent", producer_path(producer.id), method: 'delete', data: {confirm: "Are you sure?"} %></p> 
+
+  <% end %>
+</div>

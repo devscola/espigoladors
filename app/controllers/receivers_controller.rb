@@ -17,6 +17,7 @@ class ReceiversController < ApplicationController
   	@receiver = Receiver.new(receiver_params)
   	@receiver.save!
   	flash[:notice] = "Congrats, your receiver order is now created"
+  	redirect_to receivers_path
   	rescue Exception
   	  render 'new'
   	end
@@ -31,7 +32,7 @@ class ReceiversController < ApplicationController
   	redirect_to receivers_path	
   end
 
-  def delete
+  def destroy
   	@receiver = Receiver.find(params[:id])
   	if @receiver.delete
   		redirect_to receivers_path

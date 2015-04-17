@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
 
-  get 'producer/new' => 'producers#new', :as => :new_excedent
-  get 'receiver/new' => 'receiver#new', :as => :new_demand
+
+
   resources :producers
   resources :receivers
 
