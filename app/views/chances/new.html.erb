@@ -1,23 +1,38 @@
+<div class="row">
+    <section class="large-8 small-12 columns home-section">
+        <img class="home-image" src="marca-espigoladors.png">
+        
+        <p class="home-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </section>
+
+    <div class="small-6 large-4 columns home-form">
+      <%= form_for @chance, html: { id: "chance-form" } do |f| %>
+          <%= f.label :title, "¿Quien eres?" %>
+          <%= f.text_field :title %>
+          <%= f.label :address, "Escribe la localizacion donde podemos encontrarte" %>
+          <%= f.text_field :address %>
+          <%= f.label :schedule, "Horario de recogida" %>
+          <%= f.text_field :schedule %>
+            <%= f.fields_for :products do |ff| %>
+              <div>
+                <%= ff.label :food_type, "Producto" %>
+                <%= ff.text_field :food_type %>
+                <%= ff.label :quantity, "Cantidad en kilos" %>
+                <%= ff.text_field :quantity %>
+                <%= ff.label :expiration, "Fecha de caducidad" %>
+                <%= ff.text_field :expiration %>
+              </div>
+            <% end %>
+          <%= f.submit type="Submit", class: "button" %>
+
+      <% end %>
+
+    </div>
+</div>
+
+
+
 
 <div class="large-10 push-2 columns">
-<%= form_for @chance, html: { id: "chance-form" } do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title, placeholder: "Enter a title" %>
-    <%= f.label :address %>
-    <%= f.text_field :address, placeholder: "Enter the address of your chance" %>
-    <%= f.label :schedule %>
-    <%= f.text_field :schedule, placeholder: "Enter the schedule to pick up the excedents" %>
-      <%= f.fields_for :products do |ff| %>
-        <div>
-          <%= ff.label :food_type %>
-          <%= ff.text_field :food_type %>
-          <%= ff.label :quantity %>
-          <%= ff.text_field :quantity %>
-          <%= ff.label :expiration%>
-          <%= ff.text_field :expiration %>
-        </div>
-      <% end %>
-    <%= f.submit type="Submit", class: "button" %>
 
-<% end %>
 </div>
