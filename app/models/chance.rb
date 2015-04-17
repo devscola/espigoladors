@@ -1,4 +1,4 @@
-class Producer
+class Chance
 	include Mongoid::Document
 
 	field :food_type, type: String

@@ -1,0 +1,14 @@
+<h1>Display Excedents</h1>
+
+<div>
+  <% @chances.each do |chance| %>
+    <p>Food type: <%= chance.food_type %></p>
+    <p>Quantity: <%= chance.quantity %></p>
+    <p>Expiration: <%= chance.expiration %></p>
+    <p>Address: <%= chance.address %></p>
+    <p>Schedule: <%= chance.schedule %></p>
+
+    <p><%= link_to "See spot", chance_path(chance.id) %> - <%= link_to "Edit spot", edit_chance_path(chance.id) %> - <%= link_to "Delete excedent", chance_path(chance.id), method: 'delete', data: {confirm: "Are you sure?"} %></p> 
+
+  <% end %>
+</div>

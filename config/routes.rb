@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :producers
+  resources :chances
   resources :receivers
 
   # Example of regular route:
