@@ -7,7 +7,7 @@
     <%= f.text_field :address, placeholder: "Enter the address of your chance" %>
     <%= f.label :schedule %>
     <%= f.text_field :schedule, placeholder: "Enter the schedule to pick up the excedents" %>
-      <%= f.fields_for :product do |ff| %>
+      <%= f.fields_for :products do |ff| %>
         <div>
           <%= ff.label :food_type %>
           <%= ff.text_field :food_type %>
