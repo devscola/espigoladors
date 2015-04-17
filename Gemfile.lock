@@ -127,6 +127,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (2.11.1)
+      rack (>= 1.1, < 2.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -227,6 +229,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mongoid (>= 2.0.0.beta.19)
+  puma
   rails (= 4.2.1)
   rspec-rails (>= 2.0.1)
   sass-rails (~> 5.0)

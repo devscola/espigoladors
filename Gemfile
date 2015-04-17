@@ -13,6 +13,10 @@ gem 'mongoid', '>= 2.0.0.beta.19'
 gem 'rspec-rails', '>= 2.0.1', group: [:development, :test]
 gem 'guard-rails'
 
+group :production do
+  gem 'puma'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
