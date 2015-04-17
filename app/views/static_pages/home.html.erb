@@ -1,1 +1,16 @@
 <%= link_to "Add new food excedent", new_producer_path %>
+
+<%= form_for @producer, html: { id: "producer-form" } do |f| %>
+    <%= f.label :food_type %>
+    <%= f.text_field :food_type, placeholder: "Enter the kind of food" %>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity, placeholder: "Enter the quantity" %>
+    <%= f.label :expiration %>
+    <%= f.text_field :expiration, placeholder: "Enter the time of expiration" %>
+    <%= f.label :address %>
+    <%= f.text_field :address, placeholder: "Enter the address of your excedents" %>
+    <%= f.label :schedule %>
+    <%= f.text_field :schedule, placeholder: "Enter the schedule to pick up the excedents" %>
+    <%= f.submit type="Submit", class: "button" %>
+
+<% end %>
