@@ -1,9 +1,7 @@
 class Chance
 	include Mongoid::Document
 
-	field :food_type, type: String
-	field :quantity, type: Integer
-	field :expiration, type: DateTime
+	field :title, type: String
 	field :address, type: String
 	field :schedule, type: String
 end
