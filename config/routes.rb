@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'producer/new' => 'producers#new', :as => :new_excedent
+  get 'receiver/new' => 'receiver#new', :as => :new_demand
   resources :producers
+  resources :receivers
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

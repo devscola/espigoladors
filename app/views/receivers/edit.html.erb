@@ -1,0 +1,19 @@
+
+<div class="large-10 push-2 columns">
+<%= form_for @receiver, remote: true, html: { id: "producer-form" } do |f| %>
+    <%= f.label :food_type %>
+    <%= f.text_field :food_type, placeholder: "Enter the kind of food" %>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity, placeholder: "Enter the quantity" %>
+    <%= f.label :maximum_storage_time %>
+    <%= f.text_field :maximum_storage_time, placeholder: "Enter the time of maximum_storage_time" %>
+    <%= f.label :address %>
+    <%= f.text_field :address, placeholder: "Enter the address of your excedents" %>
+    <%= f.label :time %>
+    <%= f.text_field :time, placeholder: "Enter the time to pick up the excedents" %>
+    <%= f.label :people %>
+    <%= f.text_field :people, placeholder: "Enter the people who is going to enjoy" %>
+    <%= f.submit type="Submit", class: "button" %>
+
+<% end %>
+</div>

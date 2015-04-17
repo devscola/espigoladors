@@ -1,4 +1,4 @@
-class Reciber
+class Receiver
 	include Mongoid::Document
 
 	field :food_type, type: String
@@ -6,6 +6,6 @@ class Reciber
 	field :maximum_storage_time, type: String
 	field :address, type: String
 	field :time, type: String
-	field :beneciary, type: Integer
+	field :people, type: Integer
 
 end

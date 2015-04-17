@@ -1,0 +1,15 @@
+<h1>Display Demands</h1>
+
+<div>
+  <%= @receivers.each do |receiver| %>
+    <p>Food type: <%= receiver.food_type %></p>
+    <p>Quantity: <%= receiver.quantity %></p>
+    <p>Expiration: <%= receiver.maximum_storage_time %></p>
+    <p>Address: <%= receiver.address %></p>
+    <p>Time: <%= receiver.time %></p>
+    <p>Schedule: <%= receiver.people %></p>
+
+    <p><%= link_to "See spot", receiver_path(receiver.id) %> - <%= link_to "Edit spot", edit_receiver_path(receiver.id) %> - <%= link_to "Delete excedent", receiver_path(receiver.id), method: 'delete', data: {confirm: "Are you sure?"} %></p> 
+
+  <% end %>
+</div>
