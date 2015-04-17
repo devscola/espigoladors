@@ -1,10 +1,9 @@
 <div class="row">
-    <div class="small-6 large-8 columns">
+    <div class="large-8 small-12 columns">
         <img src="marca-espigoladors.png">
     </div>
 
-
-    <div class="small-6 large-4 columns home-form">
+    <div class="large-4 small-12 columns home-form">
     <%= form_for @chance, html: { id: "chance-form" } do |f| %>
         <%= f.label :food_type %>
         <%= f.text_field :food_type, placeholder: "Enter the kind of food" %>
