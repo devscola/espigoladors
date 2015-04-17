@@ -1,16 +1,36 @@
-<h1>Display Excedents</h1>
+<div class="row">
+<h1>Excedentes disponibles</h1>
 
-<div>
+<table>
+	<tr>
+		<th>Nombre</th>
+		<th>Dirección</th>
+		<th>Horario de recogida</th>
+		<th>Productos</th>
+		<th>Operaciones</th>
+	</tr>
   <% @chances.each do |chance| %>
-    <p>Title: <%= chance.title %></p>
-    <p>Address: <%= chance.address %></p>
-    <p>Schedule: <%= chance.schedule %></p>
+	<tr>
+	<td>
+    	<%= chance.title %>
+	</td>
+	<td>
+    	<%= chance.address %>
+	</td>
+	<td>
+    	<%= chance.schedule %>
+	</td>
+	<td>
+	<ul>
     <% chance.products.each do |product| %>
-      <p><%= product.food_type %></p>
-      <p><%= product.quantity %></p>
-      <p><%= product.expiration %></p>
+      <li><%= product.food_type %> kilos de <%= product.quantity %> - Caducidad: <%= product.expiration %></li>
     <% end %>
-    <p><%= link_to "See spot", chance_path(chance.id) %> - <%= link_to "Edit spot", edit_chance_path(chance.id) %> - <%= link_to "Delete excedent", chance_path(chance.id), method: 'delete', data: {confirm: "Are you sure?"} %></p>
-
+	</ul>
+	</td>
+	<td>
+    <p><%= link_to "Ver", chance_path(chance.id) %> - <%= link_to "Editar", edit_chance_path(chance.id) %> - <%= link_to "Borrar", chance_path(chance.id), method: 'delete', data: {confirm: "¿Borrar " + chance.title + "?"} %></p>
+	</td>
+	</tr>
   <% end %>
-</div>
+</table>
+<div>
