@@ -41,6 +41,6 @@ class ChancesController < ApplicationController
   private
 
   def chance_params
-    params.require(:chance).permit(:food_type, :quantity, :expiration, :address, :schedule)
+    params.require(:chance).permit(:title, :address, :schedule)
   end
 end
