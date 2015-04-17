@@ -1,9 +1,12 @@
 @import "foundation";
-
-$body-color: rgb(245, 240, 234);
+@import 'colors';
 
 
 body {
   background-color: $body-color;
 }
 
+.home-form {
+	max-width: 37.5rem;
+	margin-top: 130px;
+}

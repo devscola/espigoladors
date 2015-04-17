@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @producer = Producer.new
+    @chance = Chance.new
   end
 end
