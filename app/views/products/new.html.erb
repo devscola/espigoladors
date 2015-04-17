@@ -1,0 +1,14 @@
+<div class="large-10 push-2 columns">
+<%= form_for [@chance, @product] html: { id: "product-form" } do |f| %>
+    <%= f.label :food_type %>
+    <%= f.text_field :food_type %>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity, placeholder: "Enter the quantity" %>
+    <%= f.label :expiration %>
+    <%= f.text_field :expiration, placeholder: "Enter the time of expiration" %>
+    <%= f.label :refrigeration %>
+    <%= f.radio_button :refrigeration, placeholder: "Enter the schedule to pick up the excedents" %>
+    <%= f.submit type="Submit", class: "button" %>
+
+<% end %>
+</div>

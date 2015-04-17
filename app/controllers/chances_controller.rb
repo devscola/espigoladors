@@ -10,10 +10,12 @@ class ChancesController < ApplicationController
 
   def new
     @chance = Chance.new
+    @product = Product.new
   end
 
   def create
     @chance = Chance.new(chance_params)
+    @product = @chance.products.build(params[:product_attributes])
     @chance.save!
     flash[:notice] = "Congratulations, your excedent product has been created"
     redirect_to chances_path
@@ -41,6 +43,7 @@ class ChancesController < ApplicationController
   private
 
   def chance_params
-    params.require(:chance).permit(:title, :address, :schedule)
+    params.require(:chance).permit(:title, :address, :schedule, product_attributes: [:food_type, :quantity, :expiration, :refrigeration])
   end
+
 end

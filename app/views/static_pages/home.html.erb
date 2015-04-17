@@ -3,22 +3,27 @@
         <img src="marca-espigoladors.png">
     </div>
 
-    <div class="large-4 small-12 columns home-form">
-    <%= form_for @chance, html: { id: "chance-form" } do |f| %>
-        <%= f.label :food_type %>
-        <%= f.text_field :food_type, placeholder: "Enter the kind of food" %>
-        <%= f.label :quantity %>
-        <%= f.text_field :quantity, placeholder: "Enter the quantity" %>
-        <%= f.label :expiration %>
-        <%= f.text_field :expiration, placeholder: "Enter the time of expiration" %>
-        <%= f.label :address %>
-        <%= f.text_field :address, placeholder: "Enter the address of your excedents" %>
-        <%= f.label :schedule %>
-        <%= f.text_field :schedule, placeholder: "Enter the schedule to pick up the excedents" %>
-        <%= f.submit value="Add new food excedent", class: "button expand" %>
+    <div class="small-6 large-4 columns home-form">
+    	<%= form_for @chance, html: { id: "chance-form" } do |f| %>
+    	    <%= f.label :title %>
+    	    <%= f.text_field :title %>
+    	    <%= f.label :address %>
+    	    <%= f.text_field :address, placeholder: "Enter the address of your excedents" %>
+    	    <%= f.label :schedule %>
+    	    <%= f.text_field :schedule, placeholder: "Enter the schedule to pick up the excedents" %>
+    	      <%= f.fields_for :product do |ff| %>
+    	        <div>
+    	          <%= ff.label :food_type %>
+    	          <%= ff.text_field :food_type %>
+    	          <%= ff.label :quantity %>
+    	          <%= ff.text_field :quantity %>
+    	          <%= ff.label :expiration%>
+    	          <%= ff.text_field :expiration %>
+    	        </div>
+    	      <% end %>
+    	    <%= f.submit type="Submit", class: "button" %>
 
-    <% end %>
+    	<% end %>
 
     </div>
-
 </div>

@@ -6,7 +6,9 @@
     <p>Address: <%= chance.address %></p>
     <p>Schedule: <%= chance.schedule %></p>
 
-    <p><%= link_to "See spot", chance_path(chance.id) %> - <%= link_to "Edit spot", edit_chance_path(chance.id) %> - <%= link_to "Delete excedent", chance_path(chance.id), method: 'delete', data: {confirm: "Are you sure?"} %></p> 
+    <p><%= link_to "See spot", chance_path(chance.id) %> - <%= link_to "Edit spot", edit_chance_path(chance.id) %> - <%= link_to "Delete excedent", chance_path(chance.id), method: 'delete', data: {confirm: "Are you sure?"} %></p>
+
+    <p><%= link_to "Add product", new_chance_product_path(chance.id) %>
 
   <% end %>
 </div>

@@ -7,6 +7,18 @@
     <%= f.text_field :address, placeholder: "Enter the address of your chance" %>
     <%= f.label :schedule %>
     <%= f.text_field :schedule, placeholder: "Enter the schedule to pick up the excedents" %>
+      <%= f.fields_for :product do |ff| %>
+        <div>
+          <%= ff.label :food_type %>
+          <%= ff.text_field :food_type %>
+          <%= ff.label :quantity %>
+          <%= ff.text_field :quantity %>
+          <%= ff.label :expiration%>
+          <%= ff.text_field :expiration %>
+          <%= ff.label :refrigeration %>
+          <%= ff.radio_button :refrigeration %> 
+        </div>
+      <% end %>
     <%= f.submit type="Submit", class: "button" %>
 
 <% end %>
