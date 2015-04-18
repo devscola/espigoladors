@@ -28,7 +28,7 @@
 		  	</ul>
 	    	<% end %>
 
-          <%= f.submit value: "Añade tu producto", class: "button expand home-button" %>
+          <%= f.submit value: "Añade tu excedente", class: "button expand home-button" %>
 
 		</section>
 
@@ -36,14 +36,17 @@
  
 
   <div class="large-6 column address-field">
-
     <input type="text" class="refine" value="<%= @chance.address %>">
     <input type="hidden" class="lat"/>
     <input type="hidden" class="lng"/>
-
+    
     <div class="map" id="mapa">
 
-  		<% end %>
+        <% end %>
 
- 	</div>
+    </div>
+
+    <header>
+        <h5 class="text-center">Mueve el marcador o reescribe la direccion para ajustar tu localizacion</h5>
+    </header>
 </div>

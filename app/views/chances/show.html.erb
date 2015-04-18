@@ -1,21 +1,23 @@
 <div class="row">
- 	<ul>
-		<li>Nombre: <%= @chance.title %></li>
-		<li>Dirección: <%= @chance.address %></li>
-		<li>Horario de recogida: <%= @chance.schedule %></li>
-		<li>Productos: </li>
+	<h2><%= @chance.title %></h2>
+	<h3 ><%= @chance.address %></h3>
+	<input type="hidden" class="refine" value="<%= @chance.address %>" >
+	<h3>Horario de recogida: <%= @chance.schedule %></h3>
+
     <section>
 			<% @chance.products.each do |product| %>
 				<ul class="view-product">
 			   	  <h1 class="product-name"><%= product.quantity %> kilos de <%= product.food_type %></h1> 
 				    <li>Caducidad: <%= product.expiration %></li>
-				    <li>Horario de recogida <%= @chance.schedule %></li>
-				    <li><%= @chance.address %></li>
 				</ul>
 	    <% end %>
 		</section>
-    
- 	<ul>
+
+		<div id="mapa">
+			
+		</div>
+
+ 	<%= link_to "Volver al inicio", root_path, class: 'button expand home-button' %>
 </div>
 
 

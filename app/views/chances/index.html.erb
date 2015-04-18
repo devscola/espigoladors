@@ -30,7 +30,7 @@
 	</ul>
 	</td>
 	<td>
-    <p><%= link_to "Ver", chance_path(chance.id) %> - <%= link_to "Editar", edit_chance_path(chance.id) %> - <%= link_to "Borrar", chance_path(chance.id), method: 'delete', data: {confirm: "¿Borrar " + chance.title + "?"} %></p>
+    <p><%= link_to "Ver", chance_path(chance.id) %> - <%= link_to "Borrar", chance_path(chance.id), method: 'delete', data: {confirm: "¿Borrar " + chance.title + "?"} %></p>
 	</td>
 	</tr>
   <% end %>
