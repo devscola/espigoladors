@@ -2,7 +2,11 @@ class ChancesController < ApplicationController
 
   def index
     @chances = Chance.all
+  end
+
+  def search
     @chances = Chance.full_text_search(params[:food_type]) if params[:food_type]
+    render 'index'
   end
 
   def show
