@@ -12,6 +12,9 @@
   <% @chances.each do |chance| %>
 	<tr>
 	<td>
+    	<%= raw tag_links(chance.all_tags) %>
+	</td>
+	<td>
     	<%= chance.title %>
 	</td>
 	<td>

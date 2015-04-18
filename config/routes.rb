@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'chances#new'
 
+  get 'chances/:tag' => 'chances#index', :as => "tag"
   resources :chances 
 
   resources :receivers
