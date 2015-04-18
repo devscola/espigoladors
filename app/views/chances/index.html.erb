@@ -23,7 +23,7 @@
 	<td>
 	<ul>
     <% chance.products.each do |product| %>
-      <li><%= product.food_type %> kilos de <%= product.quantity %> - Caducidad: <%= product.expiration %></li>
+      <li><%= product.quantity %> kilos de <%= product.food_type %> - Caducidad: <%= product.expiration %></li>
     <% end %>
 	</ul>
 	</td>
