@@ -6,12 +6,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'chances#new'
 
-  get 'chances/:tag' => 'chances#index', :as => "tag"
+  get 'chances/tags/:tag' => 'chances#index', :as => "tag"
   resources :chances 
 
   resources :receivers
 
   get '/chances/check_address/:id', to: 'chances#check_address', as: 'chances_check_address'
+  
+  get '/admin', to: 'chances#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

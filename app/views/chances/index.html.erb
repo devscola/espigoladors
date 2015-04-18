@@ -12,9 +12,6 @@
   <% @chances.each do |chance| %>
 	<tr>
 	<td>
-    	<%= raw tag_links(chance.all_tags) %>
-	</td>
-	<td>
     	<%= chance.title %>
 	</td>
 	<td>
@@ -27,6 +24,7 @@
 	<ul>
     <% chance.products.each do |product| %>
       <li><%= product.quantity %> kilos de <%= product.food_type %> - Caducidad: <%= product.expiration %></li>
+      <li><%= raw tag_links(product.all_tags) %></li>
     <% end %>
 	</ul>
 	</td>

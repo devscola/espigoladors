@@ -3,5 +3,5 @@ class Tag
 
   field :name, type: String
 
-  has_and_belongs_to_many :chances
+  has_and_belongs_to_many :products
 end
