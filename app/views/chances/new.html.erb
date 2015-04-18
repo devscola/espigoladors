@@ -13,6 +13,8 @@
           <%= f.text_field :address %>
           <%= f.label :schedule, "Horario de recogida" %>
           <%= f.text_field :schedule %>
+          <%= f.label :email, "¿Cuál es tu email de contacto?" %>
+          <%= f.text_field :email %>
             <%= f.fields_for :products do |ff| %>
               <div>
                 <%= ff.label :food_type, "Producto" %>
@@ -20,7 +22,7 @@
                 <%= ff.label :quantity, "Cantidad en kilos" %>
                 <%= ff.text_field :quantity %>
                 <%= ff.label :expiration, "Fecha de caducidad" %>
-                <%= ff.text_field :expiration %>
+                <%= ff.date_field :expiration %>
               </div>
             <% end %>
           <%= f.submit type="Submit",  value: "Añade tu producto excedente", class: "button expand" %>
