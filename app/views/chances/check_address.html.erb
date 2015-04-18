@@ -1,6 +1,9 @@
 <div class="row">
+<div class="row">
+	<h1><%= @chance.title %></h1>
+	<p><%= @chance.email %></p>
+</div>
  	<ul>
-		<li>Nombre: <%= @chance.title %></li>
 		<li>Horario de recogida: <%= @chance.schedule %></li>
 		<li>Productos: </li>
     <% @chance.products.each do |product| %>
