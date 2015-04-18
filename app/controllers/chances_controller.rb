@@ -18,7 +18,7 @@ class ChancesController < ApplicationController
     @chance = Chance.new(chance_params)
     @chance.save!
     flash[:notice] = "Congratulations, your excedent product has been created"
-    redirect_to chances_path
+    redirect_to chances_check_address_path(@chance.id)
   rescue Exception
     render 'new'
   end
@@ -38,6 +38,10 @@ class ChancesController < ApplicationController
     if @chance.delete
       redirect_to chances_path
     end
+  end
+  
+  def check_address
+    @chance = Chance.find(params[:id])
   end
 
   private
