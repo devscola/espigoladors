@@ -43,7 +43,7 @@ $(function(){
 
   ESPIGOLADORS.map = L.map('mapa');
 
-  L.Icon.Default.ImagePath = '/assets';
+  L.Icon.Default.imagePath = '/assets';
 
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
