@@ -15,7 +15,21 @@
  	<ul>
 </div>
 <div class="row">
+	<%= form_for @chance, html: { id: "chance-form" } do |f| %>
+
+		<%= f.fields_for :products do |ff| %>
+	       <%= render 'product_fields', :f => ff %>
+	       <%= link_to_add_association 'add product', f, :products %>
+	    <%= link_to_remove_association "remove product", f %>
+	    <% end %>
+
+
+
+	<% end %>
+</div>
+<div class="row">
   Dirección: <%= @chance.address %>
-	<div id="map">
+	<div class="map" id="map">
+		
 	</div>
 </div>
