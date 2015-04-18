@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'chances#new'
 
-  get 'chances/:food_type' => 'chances#index', :as => "filter_by_product"
+  
   resources :chances 
+
+  get 'chances/search/:food_type' => 'chances#index', :as => "filter_by_product"
 
   resources :receivers
 
