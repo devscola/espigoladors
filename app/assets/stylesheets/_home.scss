@@ -1,0 +1,39 @@
+.home-form {
+	max-width: 37.5rem;
+	margin-top: 7%;
+}
+
+.home-image {
+	width: 62%;
+	margin: 4% 15%;
+}
+
+.home-subimage {
+	width: 70%;
+	margin: 2% 0 2% 15%;
+}
+
+.home-text {
+  font-size: 1.3em;
+  line-height: 1.6em;
+  padding-right: 1.2em;
+  color: $text-color;
+  margin-top: 12%;
+}
+
+.home-subtext {
+	margin-top: 2%;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6em;
+  color: $link-color;
+}
+
+.home-section {
+	padding: 0 2% 0 2%;
+
+}
+
+.home-button {
+	background-color: $link-color;
+}
