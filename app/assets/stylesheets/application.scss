@@ -46,3 +46,10 @@ body {
 .home-button {
 	background-color: $link-color;
 }
+
+.button.expand {
+	&:hover {
+		background-color: $text-color;
+	}
+}
+
