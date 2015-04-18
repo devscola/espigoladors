@@ -10,8 +10,8 @@
     <%= f.text_field :quantity, required: true %>
   </div>
   <div class="large-4 columns">
-    <%= f.label :expiration, "Caducidad" %>
-    <%= f.text_field :expiration, required: true %>
+    <%= f.label :expiration, "Caducidad", required: true %>
+    <%= f.date_field :expiration %>
   </div>
 
 </div>

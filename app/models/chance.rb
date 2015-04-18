@@ -12,7 +12,8 @@ class Chance
   field :schedule, type: String
   field :email, type: String
 
-  # search_in :name, :adress, :tags => :name
+
+  search_in :products => :food_type
 
   # def all_tags=(names)
   #   self.tags = names.split(",").map do |name|

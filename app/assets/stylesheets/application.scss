@@ -10,7 +10,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .view-product {
 	border: 1px solid $text-color;
 	list-style-type: none;
@@ -25,4 +24,9 @@ body {
 
 .map {
 	background-color: black;
+	
+}
+
+.address-field {
+	margin-top: 24px;
 }
