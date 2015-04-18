@@ -39,7 +39,7 @@
   },
   search: function(address, callback){
     $.ajax({
-        url: 'http://maps.googleapis.com/maps/api/geocode/json?',
+        url: 'https://maps.googleapis.com/maps/api/geocode/json?',
         data: {
             address: address,
             bounds: '43.800184,-9.556995|35.858116,3.391955',
