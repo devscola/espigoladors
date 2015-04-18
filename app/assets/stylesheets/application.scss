@@ -10,17 +10,16 @@ body {
 }
 
 
-.button.expand {
-	&:hover {
-		background-color: $text-color;
-	}
-}
-
 .view-product {
 	border: 1px solid $text-color;
 	list-style-type: none;
 	padding: .5em;
 	margin-left: 0;
+}
+
+.product-name {
+	font-size: 1.6em;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .map {
