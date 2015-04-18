@@ -7,6 +7,7 @@
 
     <div class="large-4 columns home-form">
       <%= form_for @chance, html: { id: "chance-form" } do |f| %>
+
           <p class="home-subtext">Rellena el formulario y nosotros nos encargamos de recogerla.</p>
           <%= f.label :title, "¿Quien eres?" %>
           <%= f.text_field :title %>
@@ -17,16 +18,10 @@
           <%= f.label :email, "¿Cuál es tu email de contacto?" %>
           <%= f.text_field :email %>
             <%= f.fields_for :products do |ff| %>
-              <div>
-                <%= ff.label :food_type, "Producto" %>
-                <%= ff.text_field :food_type %>
-                <%= ff.label :quantity, "Cantidad en kilos" %>
-                <%= ff.text_field :quantity %>
-                <%= ff.label :expiration, "Fecha de caducidad" %>
-                <%= ff.date_field :expiration %>
-              </div>
+              <%= render 'product_fields', :f => ff %>
             <% end %>
-          <%= f.submit type="Submit",  value: "Añade tu producto", class: "button expand home-button" %>
+
+          <%= f.submit value: "Añade tu producto", class: "button expand home-button" %>
 
       <% end %>
 

@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/mauriciozaffari/mongoid_search.git
+  revision: dfc7c45157a9339862f140a5641a5ea249d6f48a
+  branch: master
+  specs:
+    mongoid_search (0.3.2)
+      fast-stemmer (~> 1.0.0)
+      mongoid (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -47,6 +56,7 @@ GEM
       columnize (= 0.9.0)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    cocoon (1.2.6)
     coderay (1.1.0)
     columnize (0.9.0)
     connection_pool (2.2.0)
@@ -61,6 +71,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.5.2)
+    fast-stemmer (1.0.2)
     ffi (1.9.8)
     formatador (0.2.5)
     foundation-rails (5.5.1.2)
@@ -228,12 +239,14 @@ PLATFORMS
 DEPENDENCIES
   bson_ext
   byebug
+  cocoon
   devise
   foundation-rails
   guard-rails
   jbuilder (~> 2.0)
   jquery-rails
   mongoid (>= 2.0.0.beta.19)
+  mongoid_search!
   puma
   rails (= 4.2.1)
   rails_12factor

@@ -2,6 +2,7 @@ class ChancesController < ApplicationController
 
   def index
     @chances = Chance.all
+    @chances = Chance.tagged_with(params[:tag]) if params[:tag]
   end
 
   def show
@@ -42,7 +43,7 @@ class ChancesController < ApplicationController
   private
 
   def chance_params
-    params.require(:chance).permit(:title, :address, :schedule, :email, products_attributes: [:food_type, :quantity, :expiration])
+    params.require(:chance).permit(:title, :address, :schedule, :email, :all_tags, products_attributes: [:food_type, :quantity, :expiration])
   end
 
 end
