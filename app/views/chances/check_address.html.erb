@@ -5,14 +5,16 @@
 		<li>Productos: </li>
     <% @chance.products.each do |product| %>
 	  <ul>
-   	  <li><%= product.quantity %> kilos de <%= product.food_type %></li> 
+   	  <li><%= product.quantity %> kilos de <%= product.food_type %></li>
 	    <li>Caducidad: <%= product.expiration %></li>
 	  </ul>
     <% end %>
- 	<ul>
+ 	</ul>
 </div>
 <div class="row">
   Dirección: <%= @chance.address %>
-	<div id="map">
-	</div>
+  <input type="text" class="refine" value="<%= @chance.address %>">
+  <input type="text" class="lat"/>
+  <input type="text" class="lng"/>
+	<div id="mapa"></div>
 </div>
