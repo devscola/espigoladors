@@ -1,37 +1,38 @@
 <div class="row">
-  <div class="large-8 column">
-    <section class="check-title">
-      <h1><%= @chance.title %></h1>
-      <p><%= @chance.email %></p>
+	<div class="large-6 column">
+		<section class="check-title">
+			<h1><%= @chance.title %></h1>
+			<p><%= @chance.email %></p>
+		</section>
+		<section>
+		<%= form_for @chance, html: { id: "chance-form" } do |f| %>
+
+			<%= f.fields_for :products do |ff| %>
+		       <%= render 'product_fields', :f => ff %>		           
+		    <% end %>
+
+		       		<div id="new_product">
+			
+
+		</div>
+		<%= link_to_add_association 'add product', f, :products, :data => {"association-insertion-method" => "append", "association-insertion-node" => "#new_product"} %>		    	
     </section>
-    <section>
-      <% @chance.products.each do |product| %>
-      <ul class="view-product">
-          <li>Product: <%= product.food_type %></li>
-          <li>Caducidad: <%= product.expiration %></li>
-          <li>Horario de recogida: <%= @chance.schedule %></li>
-          <li>Dirección: <%= @chance.address %></li>
-      </ul>
-      <% end %>
-    </section>
+		<section>
+			<% @chance.products.each do |product| %>
+			<ul class="view-product">
+		   	  	<h1 class="product-name"><%= product.quantity %> kilos de <%= product.food_type %></h1> 
+			    <li>Caducidad: <%= product.expiration %></li>
+			    <li>Horario de recogida <%= @chance.schedule %></li>
+			    <li><%= @chance.address %></li>
+		  </ul>
+	    <% end %>
+		</section>
 
-    <section>
-    <%= form_for @chance, html: { id: "chance-form" } do |f| %>
-
-      <%= f.fields_for :products do |ff| %>
-           <%= render 'product_fields', :f => ff %>
-           <%= link_to_add_association 'add product', f, :products %>
-        <%= link_to_remove_association "remove product", f %>
-        <% end %>
-
-      <%= f.submit value: "Siguiente", class: "button expand home-button" %>
-
-    <% end %>
-    </section>
+	 	
   </div>
 
-
-  <div class="large-4 column">
+</div>
+  <div class="large-6 column">
 
     <input type="text" class="refine" value="<%= @chance.address %>">
     <input type="text" class="lat"/>
@@ -39,7 +40,8 @@
     <div class="map" id="mapa">
 
     </div>
-  </div>
-</div>
+    <%= f.submit value: "Siguiente", class: "button expand home-button" %>
 
+  </div>
+  		    <% end %>
 

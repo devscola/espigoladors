@@ -41,6 +41,7 @@ $(function(){
       );
   }).trigger('resize');
 
+  L.Icon.Default.imagePath = '/assets';
   ESPIGOLADORS.map = L.map('mapa');
 
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
