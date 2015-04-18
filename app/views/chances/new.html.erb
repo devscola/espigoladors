@@ -10,13 +10,13 @@
 
           <p class="home-subtext">Rellena el formulario y nosotros nos encargamos de recogerla.</p>
           <%= f.label :title, "¿Quien eres?" %>
-          <%= f.text_field :title %>
+          <%= f.text_field :title, type: :text %>
           <%= f.label :address, "Escribe la localizacion donde podemos encontrarte" %>
           <%= f.text_field :address %>
           <%= f.label :schedule, "Horario de recogida" %>
           <%= f.text_field :schedule %>
           <%= f.label :email, "¿Cuál es tu email de contacto?" %>
-          <%= f.text_field :email %>
+          <%= f.text_field :email, type: :email %>
             <%= f.fields_for :products do |ff| %>
               <%= render 'product_fields', :f => ff %>
             <% end %>
@@ -27,8 +27,6 @@
 
     </div>
 </div>
-
-
 
 
 <div class="large-10 push-2 columns">
