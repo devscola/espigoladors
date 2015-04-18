@@ -103,22 +103,10 @@ test:
 production:
   sessions:
     default:
-     # The standard MongoDB connection URI allows for easy
-     # replica set connection setup.
-     # Use environment variables or a config file to keep your
-     # credentials safe.
        uri: <%= ENV['MONGOLAB_URI'] %>
 
        options:
-         # max_retries specifies the number of times to attempt
-         # an operation before giving up.
          max_retries: 30
-
-         # retry_interval specifies the number of seconds to wait
-         # before retrying a single operation.
          retry_interval: 1
          timeout: 15
-
-         # refresh_interval specifies the number of seconds to cache server information.
-         # Lowering this number will help the driver recover more quickly from changes to replica set reconfiguration
          refresh_interval: 10
