@@ -1,19 +1,21 @@
+
 <div class="nested-fields">
 	<h1>Product #</h1>
   <div class="field">
     <%= f.label :all_tags, "Etiquetas" %>
     <%= f.text_field :all_tags %>
   </div>
-  <div class="field">
-    <%= f.label :food_type %>
+  <div class="row collapse">
+  <div class="large-4 columns">
+    <%= f.label :food_type, "Producto" %>
     <%= f.text_field :food_type %>
   </div>
-  <div class="field">
-    <%= f.label :quantity %>
+  <div class="large-4 columns">
+    <%= f.label :quantity, "Kilos" %>
     <%= f.text_field :quantity %>
   </div>
-  <div class="field">
-    <%= f.label :expiration %>
+  <div class="large-4 columns">
+    <%= f.label :expiration, "Caducidad" %>
     <%= f.text_field :expiration %>
   </div>
 

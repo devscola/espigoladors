@@ -1,12 +1,14 @@
 <div class="row">
-    <section class="large-12 columns home-section">
-        <img class="home-image" src="marca-espigoladors.png">
+    <section class="large-8 columns home-section">
         
-        <p class="home-text">Si tienes un excedente podemos ayudar a que asociaciones la distribuyan entre la gente que lo necesita.  Rellena el formulario y nosotros nos encargamos de recogerla.</p>
+        <p class="home-text">Si tienes fruta y verdura para descartar o productos excedentes, los Espigoladors podemos ayudar a que se distribuyan entre la gente que lo necesita.</p>
+        <img class="home-image" src="marca-espigoladors.png">
     </section>
 
-    <div class="large-8 large-centered columns">
+    <div class="large-4 columns home-form">
       <%= form_for @chance, html: { id: "chance-form" } do |f| %>
+
+          <p class="home-subtext">Rellena el formulario y nosotros nos encargamos de recogerla.</p>
           <%= f.label :title, "¿Quien eres?" %>
           <%= f.text_field :title %>
           <%= f.label :address, "Escribe la localizacion donde podemos encontrarte" %>
@@ -15,15 +17,11 @@
           <%= f.text_field :schedule %>
           <%= f.label :email, "¿Cuál es tu email de contacto?" %>
           <%= f.text_field :email %>
-          <div class="large-4">
             <%= f.fields_for :products do |ff| %>
               <%= render 'product_fields', :f => ff %>
-              <div>
-                <%= link_to_add_association 'add products', f, :products %>
-              </div>
             <% end %>
-          </div>
-          <%= f.submit type="Submit", class: "button" %>
+
+          <%= f.submit value: "Añade tu producto", class: "button expand home-button" %>
 
       <% end %>
 

@@ -1,0 +1,18 @@
+<div class="row">
+ 	<ul>
+		<li>Nombre: <%= @chance.title %></li>
+		<li>Horario de recogida: <%= @chance.schedule %></li>
+		<li>Productos: </li>
+    <% @chance.products.each do |product| %>
+	  <ul>
+   	  <li><%= product.quantity %> kilos de <%= product.food_type %></li> 
+	    <li>Caducidad: <%= product.expiration %></li>
+	  </ul>
+    <% end %>
+ 	<ul>
+</div>
+<div class="row">
+  Dirección: <%= @chance.address %>
+	<div id="map">
+	</div>
+</div>

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :receivers
 
+  get '/chances/check_address/:id', to: 'chances#check_address', as: 'chances_check_address'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
