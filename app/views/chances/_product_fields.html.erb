@@ -3,15 +3,15 @@
   <div class="row collapse">
   <div class="large-4 columns">
     <%= f.label :food_type, "Producto" %>
-    <%= f.text_field :food_type %>
+    <%= f.text_field :food_type, required: true %>
   </div>
   <div class="large-4 columns">
     <%= f.label :quantity, "Kilos" %>
-    <%= f.text_field :quantity %>
+    <%= f.text_field :quantity, required: true %>
   </div>
   <div class="large-4 columns">
     <%= f.label :expiration, "Caducidad" %>
-    <%= f.text_field :expiration %>
+    <%= f.text_field :expiration, required: true %>
   </div>
 
 </div>
