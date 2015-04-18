@@ -7,7 +7,7 @@
     <section>
       <% @chance.products.each do |product| %>
       <ul class="view-product">
-            <li><%= product.quantity %> kilos de <%= product.food_type %></li>
+          <li>Product: <%= product.food_type %></li>
           <li>Caducidad: <%= product.expiration %></li>
           <li>Horario de recogida: <%= @chance.schedule %></li>
           <li>Dirección: <%= @chance.address %></li>
