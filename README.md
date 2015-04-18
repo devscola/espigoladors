@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/devscola/espigoladors.svg?branch=master)](https://travis-ci.org/devscola/espigoladors)
+
 #Espigoladors
 
 This Rails application allows "espigoladors" to know where food producers have surpluses to pick them.   
