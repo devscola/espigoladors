@@ -42,7 +42,11 @@ $(function(){
   }).trigger('resize');
 
   L.Icon.Default.imagePath = '/assets';
-  ESPIGOLADORS.map = L.map('mapa');
+  ESPIGOLADORS.map = L.map('mapa', {
+    scrollWheelZoom: false,
+    minZoom:6,
+    maxZoom:18
+  });
 
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -50,23 +54,25 @@ $(function(){
 
   ESPIGOLADORS.map.setView([40.25, -3.41], 5);
 
-  $('button.search').click(function(event){
-    var address = $('div .address').val();
-    $('div .refine').val($('div .address').val());
-    _addMarkerFromAddress(address);
-    event.preventDefault();
-  });
+  // $('button.search').click(function(event){
+  //   var address = $('div .address').val();
+  //   $('div .refine').val($('div .address').val());
+  //   _addMarkerFromAddress(address);
+  //   event.preventDefault();
+  // });
 
-  $('button.submit').click(function(event){
-    console.log(ESPIGOLADORS.lastPosition);
-    event.preventDefault();
-  });
+  // $('button.submit').click(function(event){
+  //   console.log(ESPIGOLADORS.lastPosition);
+  //   event.preventDefault();
+  // });
 
   $('.refine').on('input', function(event){
+    if ($(this).val().length < 5)
+      return;
 
     console.log($(event.target).val());
 
-    var address = $('div .refine').val();
+    var address = $(event.target).val();
     _addMarkerFromAddress(address);
     event.preventDefault();
   }).trigger('input');

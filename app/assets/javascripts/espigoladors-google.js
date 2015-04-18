@@ -3,7 +3,7 @@
 
   ns = ns || {};
   ns.google = ns.google || {
-	buildAddress: function(slices){
+    buildAddress: function(slices){
         var formattedAddress = {
             street: '',
             number: '',
@@ -37,6 +37,7 @@
 
         return returnAddress.join(',');
   },
+
   search: function(address, callback){
     $.ajax({
         url: 'https://maps.googleapis.com/maps/api/geocode/json?',
@@ -45,7 +46,7 @@
             bounds: '43.800184,-9.556995|35.858116,3.391955',
             sensor: false,
             language: 'es',
-            //components: 'locality:' + locality,
+            // components: 'country: Spain'
         },
         timeout: 1000
     }).success(function(data){
@@ -68,32 +69,37 @@
       }
     });
   },
+
   addMarker: function(point){
+    console.log(point);
     var latLng = L.latLng(point.pos);
 
-    // if (typeof ns.thisMarker !== 'undefined')
-    //   ns.map.removeLayer(ns.thisMarker);
-
     var thisMarker = new L.Marker(latLng, {draggable: true});
-    // ns.marker = thisMarker;
     thisMarker.on('dragend', function(event){
       ns.lastPosition = event.target._latlng;
       $('.lat').val(ns.lastPosition.lat);
       $('.lng').val(ns.lastPosition.lng);
     }).fire('dragend');
+    // new L.PopUp()
 
     thisMarker.addTo(ns.featureGroup);
-
   },
+
   clearMap: function(){
     if (ns.featureGroup)
       ns.map.removeLayer(ns.featureGroup);
     ns.featureGroup = new L.featureGroup();
     ns.featureGroup.addTo(ns.map);
+
+    ns.featureGroup.on('layeradd', function(){
+      console.log(arguments);
+      ns.map.fitBounds(ns.featureGroup.getBounds(), {maxZoom: 14});
+    });
   },
+
   addPlace: function(address){
-      ns.google.search(address, this.addMarker);
-    }
+    ns.google.search(address, this.addMarker);
+  }
   };
 
   return ns;
