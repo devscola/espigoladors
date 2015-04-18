@@ -1,5 +1,16 @@
-<h1><%= @chance.title %></h1>
-<p>Address: <%= @chance.address %></p>
-<p>Schedule: <%= @chance.schedule %></p>
+<div class="row">
+ 	<ul>
+		<li>Nombre: <%= @chance.title %></li>
+		<li>Horario de recogida: <%= @chance.schedule %></li>
+		<li>Productos: </li>
+    <% @chance.products.each do |product| %>
+	  <ul>
+   	  <li><%= product.quantity %> kilos de <%= product.food_type %></li> 
+	    <li>Caducidad: <%= product.expiration %></li>
+	  </ul>
+    <% end %>
+    <li>Dirección: <%= @chance.address %></li>
+ 	<ul>
+</div>
 
 

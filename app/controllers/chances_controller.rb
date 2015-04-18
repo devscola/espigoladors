@@ -30,7 +30,7 @@ class ChancesController < ApplicationController
   def update
     @chance = Chance.find(params[:id])
     @chance.update_attributes(chance_params)
-    redirect_to chances_path
+    redirect_to chance_path(params[:id])
   end
 
   def destroy
