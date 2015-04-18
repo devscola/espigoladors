@@ -2,7 +2,7 @@ class ChancesController < ApplicationController
 
   def index
     @chances = Chance.all
-    @chances = Chance.tagged_with(params[:tag]) if params[:tag]
+    @chances = Chance.full_text_search(params[:food_type]) if params[:food_type]
   end
 
   def show

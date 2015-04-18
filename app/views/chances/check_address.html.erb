@@ -1,21 +1,17 @@
 <div class="row">
-	<div class="large-6 column">
+	<div class="large-12 columns">
 		<section class="check-title">
 			<h1><%= @chance.title %></h1>
 			<p><%= @chance.email %></p>
 		</section>
-		<section>
-			<%= form_for @chance, html: { id: "chance-form" } do |f| %>
+	</div>
+</div>
 
-				<%= f.fields_for :products do |ff| %>
-			       <%= render 'product_fields', :f => ff %>		           
-			    <% end %>
+<div class="row">
+	<div class="large-6 column">
+		
+		<section><%= form_for @chance, html: { id: "chance-form" } do |f| %></section>
 
-			<div id="new_product">
-			</div>
-			<%= link_to_add_association 'Añadir productos', f, :products, class:"button small", :data => {"association-insertion-method" => "append", "association-insertion-node" => "#new_product"} %>		    	
-      
-    	</section>
 		<section>
 			<% @chance.products.each do |product| %>
 			<ul class="view-product">
@@ -30,17 +26,15 @@
 	 </div>	
  
 
-  <div class="large-6 column">
+  <div class="large-6 column address-field">
 
     <input type="text" class="refine" value="<%= @chance.address %>">
-    <input type="text" class="lat"/>
-    <input type="text" class="lng"/>
+    <input type="hidden" class="lat"/>
+    <input type="hidden" class="lng"/>
+
     <div class="map" id="mapa">
 
-    </div>
-    <%= f.submit value: "Siguiente", class: "button expand home-button" %>
-
-  </div>
   		<% end %>
 
- </div>
+ 	</div>
+</div>
