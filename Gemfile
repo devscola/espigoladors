@@ -13,6 +13,7 @@ gem 'mongoid', '>= 2.0.0.beta.19'
 gem 'rspec-rails', '>= 2.0.1', group: [:development, :test]
 gem 'guard-rails'
 gem 'puma'
+gem "cocoon"
 
 group :production do
   gem 'rails_12factor'

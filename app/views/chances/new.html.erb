@@ -15,16 +15,14 @@
           <%= f.text_field :schedule %>
           <%= f.label :email, "¿Cuál es tu email de contacto?" %>
           <%= f.text_field :email %>
+          <div class="large-4">
             <%= f.fields_for :products do |ff| %>
+              <%= render 'product_fields', :f => ff %>
               <div>
-                <%= ff.label :food_type, "Producto" %>
-                <%= ff.text_field :food_type %>
-                <%= ff.label :quantity, "Cantidad en kilos" %>
-                <%= ff.text_field :quantity %>
-                <%= ff.label :expiration, "Fecha de caducidad" %>
-                <%= ff.date_field :expiration %>
+                <%= link_to_add_association 'add products', f, :products %>
               </div>
             <% end %>
+          </div>
           <%= f.submit type="Submit", class: "button" %>
 
       <% end %>
